@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <title>Native Names</title>
+  <meta name="description" content="A map quiz that teaches what countries call themselves, and how to say it.">
+  <meta name="theme-color" content="#0f1222">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Native Names">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-180.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div class="brand"><span class="brand-dot"></span>Native Names</div>
+      <div class="stats">
+        <span class="chip" id="chip-streak" title="Streak">🔥 <b>0</b></span>
+        <span class="chip" id="chip-score" title="Score">⭐ <b>0</b></span>
+        <span class="chip" id="chip-mastered" title="Countries mastered">🌍 <b>0</b></span>
+      </div>
+    </header>
+
+    <section id="screen-play" class="screen is-active">
+      <div class="modes" role="tablist" aria-label="Quiz mode">
+        <button class="mode is-on" data-mode="mix" role="tab">Mix</button>
+        <button class="mode" data-mode="name" role="tab">Name it</button>
+        <button class="mode" data-mode="reverse" role="tab">Reverse</button>
+        <button class="mode" data-mode="say" role="tab">Say it</button>
+      </div>
+
+      <div class="map-wrap" id="map-wrap">
+        <svg id="map" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g id="world"></g>
+        </svg>
+        <div class="map-hint" id="map-hint"></div>
+      </div>
+
+      <div class="question" id="question"></div>
+    </section>
+
+    <section id="screen-progress" class="screen">
+      <div class="progress-body" id="progress-body"></div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab is-on" data-screen="play">▶ Play</button>
+      <button class="tab" data-screen="progress">▦ Progress</button>
+    </nav>
+  </div>
+
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true">
+    <div class="sheet-grip"></div>
+    <div class="sheet-body" id="sheet-body"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="./map-data.js"></script>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
